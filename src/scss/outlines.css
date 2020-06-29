@@ -21,7 +21,7 @@ body {
 } */
 
 body {
-  min-width: 430px;
+  /*min-width: 430px;*/
   outline: 2px dashed #c7e4ff;
 }
 
@@ -47,7 +47,7 @@ nav,
 section,
 aside,
 div,
-ul, 
+ul,
 a {
   /* background-color: #f9f7ff; */
   outline: 2px solid #9779ec;
@@ -62,17 +62,15 @@ aside::before {
 
 h1,
 h2,
-li,
+li {
+  outline: 2px solid #71ffe2;
+
+}
 button,
 form {
   /* font-size: 18px; */
   /* background-color: #ffffff; */
   outline: 2px solid #ff994f;
-}
-
-h1::before {
-  /* content: "h1"; */
-  color: #ff994f;
 }
 
 p,
