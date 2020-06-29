@@ -1,0 +1,25 @@
+{
+  "name": "nerds",
+  "version": "1.0.0",
+  "description": "Updated project \"Nerds\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --output-style compressed -o dist/css src/scss",
+    "serve": "browser-sync start --server --files 'dist/css/*.css, **/*.html'",
+    "watch:css": "onchange 'src/scss' -- npm run scss",
+    "start": "run-p serve watch:css",
+    "prettier": "prettier --write src/**/*.js"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "2.26.7",
+    "node-sass": "4.14.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "7.0.2",
+    "pixel-glass": "1.0.13",
+    "prettier": "2.0.5"
+  }
+}
