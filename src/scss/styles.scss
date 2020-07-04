@@ -225,12 +225,171 @@ input[type="radio"].visually-hidden {
           }
         }
       }
+      //.slider {
+      //
+      //  .radio-slider-buttons {
+      //    background-color: red;
+      //  }
+      //  .slider-list {
+      //    margin: 0;
+      //
+      //    .slider-item {
+      //
+      //    }
+      //  }
+      //}
+      .slider {
+        position: relative;
 
-      .slider-list {
-        margin: 0;
+        background-color: #eeeeee;
+
+        .slider-controls {
+          position: absolute;
+          left: 50%;
+          bottom: 104px;
+          display: flex;
+          justify-content: space-evenly;
+          z-index: 100;
+          width: 130px;
+          height: 18px;
+
+          text-align: center;
+          font-size: 0;
+          transform: translateX(-50%);
+
+          label {
+            position: relative;
+
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            padding: 8px;
+
+            border-radius: 50%;
+            cursor: pointer;
+
+            &::after {
+              content: "";
+
+              position: absolute;
+              top: 8px;
+              left: 8px;
+              z-index: 1;
+
+              width: 18px;
+              height: 18px;
+
+              background: #ffffff;
+
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .slider-list {
+          margin: 0;
+          padding: 0;
+
+          list-style: none;
+
+          .slider-item {
+            display: none;
+            padding: 78px 0 80px 0;
+
+            &:nth-child(1) {
+              background-image: url("../../src/images/slide-1.png");
+              background-repeat: no-repeat;
+              background-position: 93% 18px;
+            }
+
+            &:nth-child(2) {
+              background-image: url("../../src/images/slide-2.png");
+              background-repeat: no-repeat;
+              background-position: 100% 0;
+            }
+
+            &:nth-child(3) {
+              background-image: url("../../src/images/slide-3.png");
+              background-repeat: no-repeat;
+              background-position: 100% 20px;
+            }
+
+            h3 {
+              max-width: 600px;
+              margin: 0;
+              margin-bottom: 27px;
+
+              font-size: 55px;
+              line-height: 55px;
+              font-weight: 500;
+            }
+
+            p {
+              max-width: 430px;
+              margin: 0;
+              margin-bottom: 38px;
+              line-height: 1.4rem;
+            }
+
+            .button {
+              display: block;
+              width: 240px;
+              padding: 13px 0;
+
+              font-size: 16px;
+              line-height: 18px;
+              color: #ffffff;
+              text-transform: uppercase;
+              text-align: center;
+              text-decoration: none;
+
+              background-color: #fb565a;
+              border-radius: 3px;
+              border: none;
+
+              &:hover,
+              &:focus {
+                background-color: #e74246;
+              }
+
+              &:active {
+                background-color: #d7373b;
+                color: rgba(255, 255, 255, 0.3);
+                box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
+              }
+            }
+          }
+        }
+
       }
 
+      #product-1:checked ~ .slider-list .slider-item:nth-child(1) {
+        display: block;
+      }
 
+      #product-2:checked ~ .slider-list .slider-item:nth-child(2) {
+        display: block;
+      }
+
+      #product-3:checked ~ .slider-list .slider-item:nth-child(3) {
+        display: block;
+      }
+
+      #product-1:checked ~ .slider-controls .slider-controls-item--1::before,
+      #product-2:checked ~ .slider-controls .slider-controls-item--2::before,
+      #product-3:checked ~ .slider-controls .slider-controls-item--3::before {
+        content: "";
+        position: absolute;
+        left: 92%;
+        top: 92%;
+        z-index: 2;
+        width: 4px;
+        height: 4px;
+        margin: -4px;
+        background-color: inherit;
+        border: 2px solid #c1c1c1;
+        border-radius: 50%;
+      }
     }
   }
 
