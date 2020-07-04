@@ -5,8 +5,8 @@ const name = document.getElementById("name-surname-field");
 const form = popup.querySelector(".modal-form");
 const email = popup.querySelector("[name=email-value]");
 const storage = localStorage.getItem("name");
-const sliderButton = document.getElementsByClassName('radio');
-const sliderButtonsArea = document.getElementsByClassName('radio-slider-buttons')[0];
+const sliderButton = document.querySelectorAll('.radio');
+// const sliderButtonsArea = document.getElementsByClassName('radio-slider-buttons')[0];
 const sliderList = document.querySelector('.slider-list');
 const sliderItem = document.querySelectorAll('.slider-item');
 let slideIndex = 1;
@@ -16,11 +16,18 @@ let isStorageSupport = true;
 
 
 console.log(sliderButton)
-console.log(sliderButtonsArea)
+// console.log(sliderButtonsArea)
 console.log(sliderList)
 console.log(sliderItem)
 
 
+
+sliderButton.forEach(function (e) {
+  // e.preventDefault();
+  e.addEventListener('click', function () {
+    console.log('Listener on radio added')
+  })
+})
 
 //
 // try {
