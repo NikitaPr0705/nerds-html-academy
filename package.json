@@ -10,7 +10,6 @@
     "watch:css": "onchange 'src/scss' -- npm run scss",
     "start": "run-p serve watch:css",
     "prettier": "prettier --write src/**/*.js"
-
   },
   "author": "",
   "license": "ISC",
